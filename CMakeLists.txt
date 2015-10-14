@@ -29,6 +29,8 @@ target_link_libraries( OpenCascadeSphereExample PRIVATE  ${OPENCASCADE_LIBRARIES
 target_compile_features(OpenCascadeSphereExample PRIVATE cxx_auto_type)
 
 add_executable(VTKExample VTKExample.cpp)
-
 target_link_libraries(VTKExample ${VTK_LIBRARIES})
+
+add_executable(VTKSphereExample VTKSphereExample.cpp)
+target_link_libraries(VTKSphereExample ${VTK_LIBRARIES})
 
