@@ -31,7 +31,7 @@ void cutOperation (const std::string& filename)
   {
     for(int j = 1;j<21;++j)
     {
-      aLT.Append(BRepPrimAPI_MakeSphere(gp_Pnt(static_cast<double>(i)+0.25,static_cast<double>(j)+0.25,0.5),0.5).Shape());
+      aLT.Append(BRepPrimAPI_MakeSphere(gp_Pnt(static_cast<double>(i)+0.25,static_cast<double>(j)+0.25,0.0),0.5).Shape());
     }
   }
     
@@ -91,7 +91,7 @@ void cutOperation (const std::string& filename)
 int main()
 {
     int maxThreads = tbb::task_scheduler_init::default_num_threads();
-    for(int i = maxThreads;i>0;i=i/2)
+    for(int i = maxThreads;i>0;--i)
     {
         cout << i << " threads\n";
         tbb::task_scheduler_init init(i);
